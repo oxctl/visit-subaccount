@@ -1,0 +1,46 @@
+{
+  "name": "visit-subaccount",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "VITE_GIT_SHA=`git rev-parse --short HEAD` vite build",
+    "start": "VITE_GIT_SHA=development vite",
+    "preview": "vite preview"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@instructure/ui": "^10",
+    "@instructure/ui-a11y-content": "^10.20.1",
+    "@instructure/ui-buttons": "^10.20.1",
+    "@instructure/ui-drilldown": "^10.20.1",
+    "@instructure/ui-flex": "^10.20.1",
+    "@instructure/ui-icons": "^10.20.1",
+    "@oxctl/ui-lti": "^2.4.0",
+    "@sentry/react": "^8.37.1",
+    "@web3-storage/parse-link-header": "^3.1.0",
+    "jwt-decode": "^4.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@vitejs/plugin-react": "^4.4.1",
+    "globals": "^16.0.0",
+    "vite": "^6.3.5",
+    "vite-plugin-mkcert": "^1.17.8"
+  }
+}

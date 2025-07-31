@@ -1,0 +1,101 @@
+{
+  "config": {
+  },
+  "ltiKey": {
+    "tool_configuration": {
+      "settings": {
+        "public_jwk": {},
+        "title": "Visit Subaccount$TITLE_SUFFIX",
+        "description": "Presents a link to the parent subaccount.",
+        "target_link_uri": "$TOOL_URL",
+        "oidc_initiation_url": "$TOOLS_SERVER_URL/lti/login_initiation/",
+        "public_jwk_url": "$TOOLS_SERVER_URL/.well-known/jwks.json",
+        "scopes": [],
+        "extensions": [
+          {
+            "platform": "canvas.instructure.com",
+            "settings": {
+            "placements": [
+                {
+                  "placement": "course_settings_sub_navigation",
+                  "message_type": "LtiResourceLinkRequest",
+                  "canvas_icon_class": "icon-settings"
+                }
+              ]
+            },
+            "privacy_level": "public"
+          }
+        ],
+        "custom_fields": {    
+          "canvas_account_id": "$Canvas.account.id",
+          "canvas_api_base_url": "$Canvas.api.baseUrl",
+          "canvas_user_prefers_high_contrast": "$Canvas.user.prefersHighContrast",
+          "com_instructure_brand_config_json_url": "$com.instructure.brandConfigJSON.url"
+        }
+      }
+    },
+    "developer_key": {
+      "name": "Visit Subaccount$TITLE_SUFFIX",
+      "redirect_uris": "$TOOLS_SERVER_URL/lti/login",
+      "scopes": []
+    }
+  },
+  "apiKey"  : {
+    "developer_key": {
+      "name": "Visit Subaccount API$TITLE_SUFFIX",
+      "require_scopes": true,
+      "redirect_uris" : "$TOOLS_SERVER_URL/login/oauth2/code/$LTI_REGISTRATION_ID",
+      "scopes": [
+        "url:GET|/api/v1/courses/:course_id"
+      ]
+    }
+  },
+  "toolReg": {
+    "lti": {
+      "registrationId": "$LTI_REGISTRATION_ID",
+      "clientName": "Visit Subaccount$TITLE_SUFFIX",
+      "clientId": "$LTI_DEV_ID",
+      "clientSecret": "$LTI_DEV_KEY",
+      "clientAuthenticationMethod": "client_secret_basic",
+      "authorizationGrantType": "implicit",
+      "redirectUri": "{baseUrl}/lti/login",
+      "scopes": [
+        "openid"
+      ],
+      "providerDetails": {
+        "authorizationUri": "$CANVAS_PROVIDER_URL/api/lti/authorize_redirect",
+        "tokenUri": "$CANVAS_PROVIDER_URL/login/oauth2/token",
+        "userInfoEndpoint": null,
+        "jwkSetUri": "$CANVAS_PROVIDER_URL/api/lti/security/jwks",
+        "issuerUri": null,
+        "configurationMetadata": {}
+      }
+    },
+    "proxy" :  {
+      "registrationId": "$LTI_REGISTRATION_ID",
+      "clientName": "Visit Subaccount$TITLE_SUFFIX",
+      "clientId": "$API_DEV_ID",
+      "clientSecret": "$API_DEV_KEY",
+      "clientAuthenticationMethod": "client_secret_post",
+      "authorizationGrantType": "authorization_code",
+      "redirectUri": "{baseUrl}/login/oauth2/code/{registrationId}",
+      "scopes": [
+        "url:GET|/api/v1/courses/:course_id"
+      ],
+      "providerDetails": {
+        "authorizationUri": "$CANVAS_URL/login/oauth2/auth",
+        "tokenUri": "$CANVAS_URL/login/oauth2/token",
+        "userInfoEndpoint": null,
+        "jwkSetUri": null,
+        "issuerUri": null,
+        "configurationMetadata": {}
+      }
+    }, 
+    "origins": [
+      "$TOOL_URL"
+    ],
+    "secret": null,
+    "issuer": "$TOOLS_SERVER_URL",
+    "nrpsAllowedRoles": []
+  }
+}

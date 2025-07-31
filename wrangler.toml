@@ -1,0 +1,17 @@
+# Top-level configuration
+
+# Although we don't generally use this, it means KV commands use this as a prefix.
+name = "visit-subaccount"
+
+# Output directory
+pages_build_output_dir = "build"
+
+[env.preview.vars]
+# needs setting up in cloudflare VITE_SENTRY_DSN = 
+VITE_SENTRY_ENV = "beta"
+VITE_SENTRY_TRACES_SAMPLE_RATE = "1.0"
+
+[env.production.vars]
+# needs setting up in cloudflare VITE_SENTRY_DSN = 
+VITE_SENTRY_ENV = "prod"
+VITE_SENTRY_TRACES_SAMPLE_RATE = "1.0"
