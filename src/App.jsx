@@ -25,7 +25,11 @@ function App() {
 
   const [canvasUserPrefersHighContrast, setCanvasUserPrefersHighContrast] =
     useState(false);
+<<<<<<< HEAD
+    
+=======
 
+>>>>>>> dcc22184eabf5aaa4c02b82040aac726c6216c4f
   const [accountId, setAccountId] = useState(1);
 
   const [server, setServer] = useState(null);
@@ -47,7 +51,7 @@ function App() {
     );
     setAccountId(jwtClaim.canvas_account_id);
 
-    console.log("the account ID is " + accountId);
+    console.log("claimed account ID is " + jwtClaim.canvas_account_id);
   };
 
   return (
@@ -63,13 +67,15 @@ function App() {
             server={{ proxyServer: server }}
             promptUserLogin={() => setNeedsToken(false)}
           >
+          
             <View as="div" padding="large">
               <Heading level="h1" as="h2">
                 Visit Subaccount
               </Heading>
 
-              <Text>URL: Visit /account/-accountId-</Text>
+              <Text>Visit <Link href="/account/1">parent subaccount</Link>.</Text>
             </View>
+            
           </LaunchOAuth>
         </LtiHeightLimit>
       </LtiApplyTheme>
