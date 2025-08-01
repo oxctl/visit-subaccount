@@ -63,15 +63,15 @@ function App() {
             server={{ proxyServer: server }}
             promptUserLogin={() => setNeedsToken(false)}
           >
-          
             <View as="div" padding="large">
               <Heading level="h1" as="h2">
                 Visit Subaccount
               </Heading>
 
-              <Text>Visit <Link href="/account/1">parent subaccount</Link>.</Text>
+              <Text>
+                Visit <Link href="/account/1">parent subaccount</Link>.
+              </Text>
             </View>
-            
           </LaunchOAuth>
         </LtiHeightLimit>
       </LtiApplyTheme>
