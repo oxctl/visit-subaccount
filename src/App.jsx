@@ -48,7 +48,7 @@ function App() {
 
     console.log("claimed account ID is " + jwtClaim.canvas_account_id);
 
-    accountUrl = server + "/account/" + jwtClaim.canvas_account_id;
+    setAccountUrl(server + "/account/" + jwtClaim.canvas_account_id);
 
     console.log("setAccountUrl is " + accountUrl);
   };
