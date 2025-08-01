@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 
+import { View } from "@instructure/ui-view";
+import { Heading } from "@instructure/ui-heading";
+import { Text } from "@instructure/ui-text";
+import { Link } from "@instructure/ui-link";
+
 import {
   LtiApplyTheme,
   LtiTokenRetriever,
@@ -12,6 +17,8 @@ import { jwtDecode } from "jwt-decode";
 function App() {
   const [token, setToken] = useState(null);
   const [needsToken, setNeedsToken] = useState(false);
+
+  const [accountUrl, setAccountUrl] = useState(null);
 
   const [
     comInstructureBrandConfigJsonUrl,
@@ -38,9 +45,10 @@ function App() {
     setCanvasUserPrefersHighContrast(
       jwtClaim.canvas_user_prefers_high_contrast === "true",
     );
-    setAccountId(jwtClaim.canvas_account_id);
 
-    console.log("the account ID is " + accountId);
+    setAccountUrl(
+      jwtClaim.canvas_base_url + "accounts/" + jwtClaim.canvas_account_id,
+    );
   };
 
   return (
@@ -61,7 +69,13 @@ function App() {
                 Visit Subaccount
               </Heading>
 
-              <Text>URL: Visit /account/-accountId-</Text>
+              <Text>
+                Visit{" "}
+                <Link target="_top" href={accountUrl}>
+                  parent subaccount
+                </Link>
+                .
+              </Text>
             </View>
           </LaunchOAuth>
         </LtiHeightLimit>
