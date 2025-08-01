@@ -45,7 +45,7 @@ function App() {
     setCanvasUserPrefersHighContrast(
       jwtClaim.canvas_user_prefers_high_contrast === "true",
     );
-    setAccountId(jwtClaim.canvas_account_id);
+   
 
     console.log("claimed account ID is " + jwtClaim.canvas_account_id);
 
