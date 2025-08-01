@@ -45,8 +45,8 @@ function App() {
     setCanvasUserPrefersHighContrast(
       jwtClaim.canvas_user_prefers_high_contrast === "true",
     );
-    
-    console.log("base url "+jwtClaim.canvas_base_url)
+
+    console.log("base url " + jwtClaim.canvas_base_url);
 
     setAccountUrl(
       jwtClaim.canvas_base_url + "/account/" + jwtClaim.canvas_account_id,
