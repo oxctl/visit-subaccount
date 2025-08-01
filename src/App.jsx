@@ -49,7 +49,7 @@ function App() {
     console.log("base url " + jwtClaim.canvas_base_url);
 
     setAccountUrl(
-      jwtClaim.canvas_base_url + "/account/" + jwtClaim.canvas_account_id,
+      jwtClaim.canvas_base_url + "account/" + jwtClaim.canvas_account_id,
     );
   };
 
@@ -72,7 +72,7 @@ function App() {
               </Heading>
 
               <Text>
-                Visit <Link href={accountUrl}>parent subaccount</Link>.
+                Visit <Link href={accountUrl} >parent subaccount</Link>.
               </Text>
             </View>
           </LaunchOAuth>
