@@ -46,8 +46,9 @@ function App() {
       jwtClaim.canvas_user_prefers_high_contrast === "true",
     );
 
-    setAccountUrl(jwtClaim.canvas_base_url + "/account/" + jwtClaim.canvas_account_id);
-
+    setAccountUrl(
+      jwtClaim.canvas_base_url + "/account/" + jwtClaim.canvas_account_id,
+    );
   };
 
   return (
