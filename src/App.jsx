@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 
+import { View } from "@instructure/ui-view";
+import { Heading } from "@instructure/ui-heading";
+import { Text } from "@instructure/ui-text";
+import { Link } from "@instructure/ui-link";
+
 import {
   LtiApplyTheme,
   LtiTokenRetriever,
