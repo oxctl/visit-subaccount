@@ -27,7 +27,7 @@ function App() {
     useState(false);
 
   const [server, setServer] = useState(null);
-  
+
   const updateToken = (receivedToken, server) => {
     setToken(receivedToken);
 
@@ -46,10 +46,10 @@ function App() {
     setAccountId(jwtClaim.canvas_account_id);
 
     console.log("claimed account ID is " + jwtClaim.canvas_account_id);
-    
-    accountUrl = server+"/account/"+jwtClaim.canvas_account_id
-    
-    console.log("setAccountUrl is "+accountUrl)
+
+    accountUrl = server + "/account/" + jwtClaim.canvas_account_id;
+
+    console.log("setAccountUrl is " + accountUrl);
   };
 
   return (
@@ -65,15 +65,15 @@ function App() {
             server={{ proxyServer: server }}
             promptUserLogin={() => setNeedsToken(false)}
           >
-          
             <View as="div" padding="large">
               <Heading level="h1" as="h2">
                 Visit Subaccount
               </Heading>
 
-              <Text>Visit <Link href={accountUrl}>parent subaccount</Link>.</Text>
+              <Text>
+                Visit <Link href={accountUrl}>parent subaccount</Link>.
+              </Text>
             </View>
-            
           </LaunchOAuth>
         </LtiHeightLimit>
       </LtiApplyTheme>
