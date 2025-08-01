@@ -10,7 +10,6 @@ import {
 import { jwtDecode } from "jwt-decode";
 
 function App() {
-
   const [token, setToken] = useState(null);
   const [needsToken, setNeedsToken] = useState(false);
 
@@ -18,7 +17,7 @@ function App() {
     comInstructureBrandConfigJsonUrl,
     setComInstructureBrandConfigJsonUrl,
   ] = useState(null);
-  
+
   const [canvasUserPrefersHighContrast, setCanvasUserPrefersHighContrast] =
     useState(false);
 
@@ -40,10 +39,9 @@ function App() {
       jwtClaim.canvas_user_prefers_high_contrast === "true",
     );
     setAccountId(jwtClaim.canvas_account_id);
-    
-    console.log("the account ID is "+accountId)
-  };
 
+    console.log("the account ID is " + accountId);
+  };
 
   return (
     <LtiTokenRetriever handleJwt={updateToken}>
@@ -59,16 +57,12 @@ function App() {
             promptUserLogin={() => setNeedsToken(false)}
           >
             <View as="div" padding="large">
-      			<Heading level="h1" as="h2">
-        			Visit Subaccount
-      			</Heading>
+              <Heading level="h1" as="h2">
+                Visit Subaccount
+              </Heading>
 
-  
-        		<Text>
-          URL: Visit /account/-accountId-
-        </Text>
-     
-    </View>
+              <Text>URL: Visit /account/-accountId-</Text>
+            </View>
           </LaunchOAuth>
         </LtiHeightLimit>
       </LtiApplyTheme>
