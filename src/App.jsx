@@ -25,8 +25,8 @@ function App() {
 
   const [canvasUserPrefersHighContrast, setCanvasUserPrefersHighContrast] =
     useState(false);
-    
-    const [accountId, setAccountId] = useState(1);
+
+  const [accountId, setAccountId] = useState(1);
 
   const [server, setServer] = useState(null);
 
