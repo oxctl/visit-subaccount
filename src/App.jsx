@@ -46,11 +46,8 @@ function App() {
       jwtClaim.canvas_user_prefers_high_contrast === "true",
     );
 
-    console.log("claimed account ID is " + jwtClaim.canvas_account_id);
+    setAccountUrl(jwtClaim.canvas_base_url + "/account/" + jwtClaim.canvas_account_id);
 
-    setAccountUrl(server + "/account/" + jwtClaim.canvas_account_id);
-
-    console.log("setAccountUrl is " + accountUrl);
   };
 
   return (
