@@ -72,7 +72,7 @@ function App() {
               </Heading>
 
               <Text>
-                Visit <Link href={accountUrl} >parent subaccount</Link>.
+                Visit <Link href={accountUrl}>parent subaccount</Link>.
               </Text>
             </View>
           </LaunchOAuth>
