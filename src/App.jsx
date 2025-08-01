@@ -17,8 +17,8 @@ import { jwtDecode } from "jwt-decode";
 function App() {
   const [token, setToken] = useState(null);
   const [needsToken, setNeedsToken] = useState(false);
-  
-  const [accountUrl, setAccountUrl]  = useState(null);
+
+  const [accountUrl, setAccountUrl] = useState(null);
 
   const [
     comInstructureBrandConfigJsonUrl,
