@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-import { Tabs } from "@instructure/ui-tabs";
 import {
   LtiApplyTheme,
   LtiTokenRetriever,
@@ -10,10 +9,8 @@ import {
 
 import { jwtDecode } from "jwt-decode";
 
-import HomePage from "./HomePage";
-
 function App() {
-  const [selectedIndex, setSelectedIndex] = useState(0);
+
   const [token, setToken] = useState(null);
   const [needsToken, setNeedsToken] = useState(false);
 
@@ -21,9 +18,9 @@ function App() {
     comInstructureBrandConfigJsonUrl,
     setComInstructureBrandConfigJsonUrl,
   ] = useState(null);
+  
   const [canvasUserPrefersHighContrast, setCanvasUserPrefersHighContrast] =
     useState(false);
-  const [accountId, setAccountId] = useState(1);
 
   const [server, setServer] = useState(null);
 
@@ -43,11 +40,10 @@ function App() {
       jwtClaim.canvas_user_prefers_high_contrast === "true",
     );
     setAccountId(jwtClaim.canvas_account_id);
+    
+    console.log("the account ID is "+accountId)
   };
 
-  const handleTabChange = (event, { index }) => {
-    setSelectedIndex(index);
-  };
 
   return (
     <LtiTokenRetriever handleJwt={updateToken}>
@@ -62,22 +58,17 @@ function App() {
             server={{ proxyServer: server }}
             promptUserLogin={() => setNeedsToken(false)}
           >
-            <Tabs
-              margin="large auto"
-              padding="medium"
-              onRequestTabChange={handleTabChange}
-            >
-              <Tabs.Panel
-                id="home"
-                renderTitle="Home"
-                textAlign="start"
-                padding="large"
-                isSelected={selectedIndex === 0}
-              >
-                <HomePage accountId={accountId} />
-              </Tabs.Panel>
+            <View as="div" padding="large">
+      			<Heading level="h1" as="h2">
+        			Visit Subaccount
+      			</Heading>
 
-            </Tabs>
+  
+        		<Text>
+          URL: Visit /account/-accountId-
+        </Text>
+     
+    </View>
           </LaunchOAuth>
         </LtiHeightLimit>
       </LtiApplyTheme>
