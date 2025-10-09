@@ -55,12 +55,12 @@ function App() {
   useEffect(() => {
     if (accountUrl) {
       if (window.top !== window.self) {
-      // inside an iframe → redirect the top window
-      window.top.location.href = accountUrl;
-    } else {
-      // normal page → redirect current window
-      window.location.href = accountUrl;
-    }
+        // inside an iframe → redirect the top window
+        window.top.location.href = accountUrl;
+      } else {
+        // normal page → redirect current window
+        window.location.href = accountUrl;
+      }
     }
   }, [accountUrl]);
 
