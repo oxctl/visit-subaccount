@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { View } from "@instructure/ui-view";
 import { Heading } from "@instructure/ui-heading";
@@ -32,24 +32,37 @@ function App() {
 
   const updateToken = (receivedToken, server) => {
     setToken(receivedToken);
-
     setServer(server);
 
     const decodedJwt = jwtDecode(receivedToken);
-
     const jwtClaim =
       decodedJwt["https://purl.imsglobal.org/spec/lti/claim/custom"];
+
     setComInstructureBrandConfigJsonUrl(
       jwtClaim.com_instructure_brand_config_json_url,
     );
+
     setCanvasUserPrefersHighContrast(
       jwtClaim.canvas_user_prefers_high_contrast === "true",
     );
 
-    setAccountUrl(
-      jwtClaim.canvas_base_url + "accounts/" + jwtClaim.canvas_account_id,
-    );
+    const url =
+      jwtClaim.canvas_base_url + "accounts/" + jwtClaim.canvas_account_id;
+    setAccountUrl(url);
   };
+
+  // Redirect automatically when accountUrl becomes available
+  useEffect(() => {
+    if (accountUrl) {
+      if (window.top !== window.self) {
+        // inside an iframe → redirect the top window
+        window.top.location.href = accountUrl;
+      } else {
+        // normal page → redirect current window
+        window.location.href = accountUrl;
+      }
+    }
+  }, [accountUrl]);
 
   return (
     <LtiTokenRetriever handleJwt={updateToken}>
@@ -66,16 +79,20 @@ function App() {
           >
             <View as="div" padding="large">
               <Heading level="h1" as="h2">
-                Visit Subaccount
+                Redirecting to Subaccount...
               </Heading>
 
-              <Text>
-                Visit{" "}
-                <Link target="_top" href={accountUrl}>
-                  parent subaccount
-                </Link>
-                .
-              </Text>
+              {accountUrl ? (
+                <Text>
+                  If you are not redirected automatically,{" "}
+                  <Link target="_top" href={accountUrl}>
+                    click here
+                  </Link>
+                  .
+                </Text>
+              ) : (
+                <Text>Preparing redirect...</Text>
+              )}
             </View>
           </LaunchOAuth>
         </LtiHeightLimit>
