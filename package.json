@@ -22,8 +22,8 @@
     ]
   },
   "dependencies": {
-    "@instructure/ui": "^10",
     "@instructure/ui-a11y-content": "^10.20.1",
+    "@instructure/ui-link": "^10.20.1",
     "@instructure/ui-buttons": "^10.20.1",
     "@instructure/ui-drilldown": "^10.20.1",
     "@instructure/ui-flex": "^10.20.1",
