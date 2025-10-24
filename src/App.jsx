@@ -28,7 +28,7 @@ function App() {
   const [canvasUserPrefersHighContrast, setCanvasUserPrefersHighContrast] =
     useState(false);
 
-  const [server, setServer] = useState(null);
+  const [server, setServer] = useState("");
 
   const updateToken = (receivedToken, server) => {
     setToken(receivedToken);
