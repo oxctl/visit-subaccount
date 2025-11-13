@@ -6,7 +6,7 @@ import { Text } from "@instructure/ui-text";
 import { Link } from "@instructure/ui-link";
 
 import {
-  LtiApplyTheme,
+  LtiPageSettings,
   LtiTokenRetriever,
   LaunchOAuth,
   LtiHeightLimit,
@@ -20,14 +20,6 @@ function App() {
 
   const [accountUrl, setAccountUrl] = useState(null);
 
-  const [
-    comInstructureBrandConfigJsonUrl,
-    setComInstructureBrandConfigJsonUrl,
-  ] = useState(null);
-
-  const [canvasUserPrefersHighContrast, setCanvasUserPrefersHighContrast] =
-    useState(false);
-
   const [server, setServer] = useState("");
 
   const updateToken = (receivedToken, server) => {
@@ -35,19 +27,9 @@ function App() {
     setServer(server);
 
     const decodedJwt = jwtDecode(receivedToken);
-    const jwtClaim =
-      decodedJwt["https://purl.imsglobal.org/spec/lti/claim/custom"];
+    const jwtClaim = decodedJwt["https://purl.imsglobal.org/spec/lti/claim/custom"];
 
-    setComInstructureBrandConfigJsonUrl(
-      jwtClaim.com_instructure_brand_config_json_url,
-    );
-
-    setCanvasUserPrefersHighContrast(
-      jwtClaim.canvas_user_prefers_high_contrast === "true",
-    );
-
-    const url =
-      jwtClaim.canvas_base_url + "accounts/" + jwtClaim.canvas_account_id;
+    const url = jwtClaim.canvas_base_url + "accounts/" + jwtClaim.canvas_account_id;
     setAccountUrl(url);
   };
 
@@ -66,10 +48,7 @@ function App() {
 
   return (
     <LtiTokenRetriever handleJwt={updateToken}>
-      <LtiApplyTheme
-        url={comInstructureBrandConfigJsonUrl}
-        highContrast={canvasUserPrefersHighContrast}
-      >
+      <LtiPageSettings>
         <LtiHeightLimit>
           <LaunchOAuth
             promptLogin={needsToken}
@@ -96,7 +75,7 @@ function App() {
             </View>
           </LaunchOAuth>
         </LtiHeightLimit>
-      </LtiApplyTheme>
+      </LtiPageSettings>
     </LtiTokenRetriever>
   );
 }
