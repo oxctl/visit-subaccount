@@ -32,11 +32,6 @@ npx @oxctl/lti-auto-configuration setup
 npx @oxctl/lti-auto-configuration create
 ```
 
-
-### Development 
-
-The deploy to development is done automatically when a new commit is made to master.
-
 ### Development 
 
 The deploy to development is done automatically when a new commit is made to master.
