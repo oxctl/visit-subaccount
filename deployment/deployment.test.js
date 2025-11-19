@@ -11,5 +11,8 @@ test.describe('Test deployment', () => {
     // Check there's the correct title on the page
     const title = ltiIFrame.getByText("Redirecting to Subaccount...")
     await expect(title).toBeVisible()
+
+    // check the redirection has actually happened.
+    await expect(page.url()).toContain(`${process.env.CANVAS_HOST}/accounts/11581`)
   })
 })
