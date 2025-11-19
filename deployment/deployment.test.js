@@ -4,7 +4,7 @@ import { dismissBetaBanner, getLtiIFrame, waitForNoSpinners, TEST_URL } from '@o
 // TEST_URL is provided by @oxctl/deployment-test-utils and composes host+path
 
 test.describe('Test deployment', () => {
-    test('The tool should load and the title "Redirecting to Subaccount..." should be shown (before redirecting the the subaccount).', async ({context, page}) => {
+    test('The tool should load and the title "Redirecting to Subaccount..." should be shown (before redirecting the subaccount).', async ({context, page}) => {
     await page.goto(TEST_URL)
     await dismissBetaBanner(page)
     const ltiIFrame = getLtiIFrame(page)
