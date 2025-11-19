@@ -12,6 +12,6 @@ test.describe('Test deployment', () => {
 
     // Check there's a title Account Reports
     const title = ltiIFrame.getByText("Redirecting to Subaccount...")
-    await expect(title).toBeVisible();
+    await expect(title).toBeVisible()
   })
 })
