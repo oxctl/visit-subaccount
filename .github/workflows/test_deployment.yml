@@ -2,7 +2,7 @@
 # The deployment tests are available in the 'deployment' folder in the root of the project.
 
 name: Test Deployment
-run-name: "Test deployment for the  ${{ inputs.execution-environment }} environment"
+run-name: "Test deployment for the ${{ inputs.execution-environment }} environment"
 
 on:
   workflow_call:
@@ -21,6 +21,7 @@ on:
         options:
         - beta
         - prod
+
 
 jobs:
   deployment-tests:
