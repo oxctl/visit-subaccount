@@ -17,10 +17,11 @@ on:
         type: choice
         description: "Environment"
         required: true
-        default: 'BETA'
+        default: 'beta'
         options:
-        - BETA
-        - PROD
+        - beta
+        - prod
+
 
 jobs:
   deployment-tests:
