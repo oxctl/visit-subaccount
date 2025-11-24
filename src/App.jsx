@@ -16,7 +16,8 @@ import { jwtDecode } from "jwt-decode";
 
 /**
  * Retrieves an LTI JWT, extracts the Canvas Base URL
- * and Account Id (which is the subaccount to which the current course belongs to) from the custom LTI claim.
+ * and Account Id (which is the subaccount to which 
+ * the current course belongs to) from the custom LTI claim.
  * It uses these to build the subaccount URL and
  * redirects the user to that subaccount. 
  *
