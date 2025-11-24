@@ -11,5 +11,10 @@ test.describe('Test deployment', () => {
     // Check there's the correct title on the page
     const title = ltiIFrame.getByText("Redirecting to Subaccount...")
     await expect(title).toBeVisible()
+
+    await Promise.any([
+        expect(title).toBeVisible({ timeout: 1000 }),
+        expect(page).toHaveURL(/accounts\/11581/, { timeout: 10000 }),
+    ])
   })
 })
