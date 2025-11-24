@@ -27,7 +27,9 @@ function App() {
     const decodedJwt = jwtDecode(receivedToken);
     const jwtClaim = decodedJwt["https://purl.imsglobal.org/spec/lti/claim/custom"];
 
-    const url = jwtClaim.canvas_base_url + "accounts/" + jwtClaim.canvas_account_id;
+  // Ensure there's no trailing slash on the Canvas base URL before concatenating
+  const baseCanvasUrl = (jwtClaim.canvas_base_url || "").replace(/\/+$/g, "");
+  const url = baseCanvasUrl + "/accounts/" + jwtClaim.canvas_account_id;
     setAccountUrl(url);
   };
 
