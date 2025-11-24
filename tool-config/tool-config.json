@@ -28,7 +28,7 @@
         ],
         "custom_fields": {    
           "canvas_account_id": "$Canvas.account.id",
-          "canvas_base_url": "$Canvas.api.domain"
+          "canvas_base_url": "$Canvas.api.baseUrl"
         }
       }
     },
