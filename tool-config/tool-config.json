@@ -5,11 +5,11 @@
     "tool_configuration": {
       "settings": {
         "public_jwk": {},
-        "title": "Visit Sub Account$TITLE_SUFFIX",
+        "title": "Visit Sub-account$TITLE_SUFFIX",
         "description": "Presents a link to the parent subaccount.",
         "target_link_uri": "$TOOL_URL",
-        "oidc_initiation_url": "$TOOLS_SERVER_URL/lti/login_initiation/",
-        "public_jwk_url": "$TOOLS_SERVER_URL/.well-known/jwks.json",
+        "oidc_initiation_url": "$TOOL_SUPPORT_URL/lti/login_initiation/",
+        "public_jwk_url": "$TOOL_SUPPORT_URL/.well-known/jwks.json",
         "scopes": [],
         "extensions": [
           {
@@ -28,13 +28,13 @@
         ],
         "custom_fields": {    
           "canvas_account_id": "$Canvas.account.id",
-          "canvas_base_url": "$CANVAS_PROVIDER_URL"
+          "canvas_base_url": "$Canvas.api.baseUrl"
         }
       }
     },
     "developer_key": {
       "name": "Visit Sub Account$TITLE_SUFFIX",
-      "redirect_uris": "$TOOLS_SERVER_URL/lti/login",
+      "redirect_uris": "$TOOL_SUPPORT_URL/lti/login",
       "scopes": []
     }
   },
@@ -44,7 +44,7 @@
   "toolReg": {
     "lti": {
       "registrationId": "$LTI_REGISTRATION_ID",
-      "clientName": "Visit Sub Account$TITLE_SUFFIX",
+      "clientName": "Visit Sub-account$TITLE_SUFFIX",
       "clientId": "$LTI_DEV_ID",
       "clientSecret": "$LTI_DEV_KEY",
       "clientAuthenticationMethod": "client_secret_basic",
@@ -67,7 +67,7 @@
       "$TOOL_URL"
     ],
     "secret": null,
-    "issuer": "$TOOLS_SERVER_URL",
+    "issuer": "$TOOL_SUPPORT_URL",
     "nrpsAllowedRoles": []
   }
 }

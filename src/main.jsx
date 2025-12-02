@@ -1,10 +1,9 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-
 import App from "./App.jsx";
-
 import * as Sentry from "@sentry/react";
 
+// Should be defined in a Cloudflare Secret
 const dsn = import.meta.env.VITE_SENTRY_DSN;
 if (dsn) {
   Sentry.init({

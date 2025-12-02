@@ -32,10 +32,18 @@ npx @oxctl/lti-auto-configuration setup
 npx @oxctl/lti-auto-configuration create
 ```
 
-
 ### Development 
 
 The deploy to development is done automatically when a new commit is made to master.
+
+### Deployment Tests
+
+There is a simple deployment test that is run when the tool is deployed to Beta or Production - we check that the page loads and has the expected title. This test relies on the repository having access to the organizational 
+GitHub Actions Secret `DEPLOYMENT_TESTS_OAUTH_TOKEN`. Access must be granted on a repository-by-repository basis.
+
+These variables need to be set as GitHub Actions environment variables in your repository's configuration:
+ - `CANVAS_HOST`
+ - `DEPLOYMENT_TEST_PATH`
 
 ### Releasing
 
@@ -54,7 +62,7 @@ then to double check a PR can be created to merge the changes, reviewed and merg
 ## Sentry
 
 Application errors are reported using https://sentry.io for this application. There is DSN to be used for development and  production and 
-should be set up by hand as a Cloudflare (or equivalent) environment variable 'VITE_SENTRY_DSN'.
+should be set up by hand as a Cloudflare (or equivalent) environment variable `VITE_SENTRY_DSN`.
  
 There's no DSN for local development. 
 

@@ -14,12 +14,19 @@ import {
 
 import { jwtDecode } from "jwt-decode";
 
+/**
+ * Retrieves an LTI JWT, extracts the Canvas Base URL
+ * and Account Id (which is the subaccount to which 
+ * the current course belongs to) from the custom LTI claim.
+ * It uses these to build the subaccount URL and
+ * redirects the user to that subaccount. 
+ *
+ * @returns {JSX.Element} The app UI which initiates or shows the redirect flow
+ */
 function App() {
   const [token, setToken] = useState(null);
   const [needsToken, setNeedsToken] = useState(false);
-
   const [accountUrl, setAccountUrl] = useState(null);
-
   const [server, setServer] = useState("");
 
   const updateToken = (receivedToken, server) => {
@@ -29,7 +36,11 @@ function App() {
     const decodedJwt = jwtDecode(receivedToken);
     const jwtClaim = decodedJwt["https://purl.imsglobal.org/spec/lti/claim/custom"];
 
-    const url = jwtClaim.canvas_base_url + "accounts/" + jwtClaim.canvas_account_id;
+  // Ensure there's no trailing slash on the Canvas base URL before concatenating
+  const baseCanvasUrl = (jwtClaim.canvas_base_url || "").replace(/\/+$/g, "");
+
+  // this is the parent sub-account
+  const url = baseCanvasUrl + "/accounts/" + jwtClaim.canvas_account_id;
     setAccountUrl(url);
   };
 
