@@ -5,11 +5,8 @@ import mkcert from "vite-plugin-mkcert";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
-    mkcert({
-      keyFileName: "./localhost-key.pem",
-      certFileName: "./localhost.pem",
-    }),
     react(),
+    process.env.CI !== "true" && mkcert(),
   ],
   build: {
     // This means we don't have to change the config in cloudflare.
