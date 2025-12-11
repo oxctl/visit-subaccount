@@ -35,7 +35,6 @@
     "developer_key": {
       "name": "Visit Sub Account$TITLE_SUFFIX",
       "redirect_uris": "$TOOL_SUPPORT_URL/lti/login",
-      "notes": "Auto-Config: $CURRENT_DATETIME",
       "scopes": []
     }
   },
