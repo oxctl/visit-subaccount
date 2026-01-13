@@ -8,7 +8,7 @@ pages_build_output_dir = "build"
 
 [env.preview.vars]
 #
-# This template sets up all the required environment variables, however, in order for Sentry to work, 
+# This section sets up all the required environment variables, however, in order for Sentry to work, 
 # some secrets need to be manually added to the Cloudflare configuration. These are detailed below.
 #
 
@@ -22,7 +22,7 @@ VITE_SENTRY_TRACES_SAMPLE_RATE = "1.0"
 
 [env.production.vars]
 #
-# This template sets up all the required environment variables, however, in order for Sentry to work, 
+# This section sets up all the required environment variables, however, in order for Sentry to work, 
 # some secrets need to be manually added to the Cloudflare configuration. These are detailed below.
 #
 
