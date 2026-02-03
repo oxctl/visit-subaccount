@@ -86,7 +86,7 @@ Please be patient, sometimes we have higher priorities which take precedence.
 
 - Match the existing code style
 - Avoid unrelated refactors
-- Prefer clarity over cleverness - add comments where approprite
+- Prefer clarity over cleverness - add comments where appropriate
 - Keep dependencies minimal - check licensing
 
 ---
