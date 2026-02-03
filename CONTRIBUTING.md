@@ -14,7 +14,6 @@ You can help by:
 - Improving documentation
 - Submitting code changes
 
-.
 
 ---
 
