@@ -24,15 +24,6 @@ Do not:
 
 
 
----
-
-## Enforcement 
-
-Maintainers have the right and responsibility to remove, edit, or reject comments,
-commits, code, wiki edits, issues, and other contributions that are not aligned to
-this Code of Conduct.
-
-Any unacceptable behaviour should be reported to the maintainers.
 
 ---
 
@@ -51,7 +42,13 @@ spaces.
 
 ## Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported
+Maintainers have the right and responsibility to remove, edit, or reject comments,
+commits, code, wiki edits, issues, and other contributions that are not aligned to
+this Code of Conduct.
+
+Any unacceptable behaviour should be reported to the maintainers.
+
+Instances of abusive, harassing, or otherwise unacceptable behaviour may be reported
 to the project maintainers.
 
 All complaints will be reviewed and investigated promptly and fairly.
