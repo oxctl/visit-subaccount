@@ -1,14 +1,5 @@
 # Code of Conduct
 
-## Our Pledge
-
-We will act and interact in ways that contribute to an open, welcoming,
-diverse, inclusive, and healthy community.
-
----
-
-## Our Standards
-
 To make this a positive environment:
 
 - Be respectful and considerate in language and actions
@@ -22,12 +13,7 @@ Do not:
 
 - Harass, discriminate, troll, insult or undertake any other kind of inappropriate or unprofessional behaviour
 
-This applies within all project spaces: PRs, discussions, issues etc.
-
-
----
-
-## Enforcement
+The above applies within all project spaces: PRs, discussions, issues etc.
 
 Maintainers have the right and responsibility to remove, edit, or reject comments,
 commits, code, wiki edits, issues, and other contributions that are not aligned to
