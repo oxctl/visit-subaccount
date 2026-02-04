@@ -22,21 +22,8 @@ Do not:
 
 - Harass, discriminate, troll, insult or undertake any other kind of inappropriate or unprofessional behaviour
 
+This applies within all project spaces: PRs, discussions, issues etc.
 
-
-
----
-
-## Scope
-
-This Code of Conduct applies within all project spaces, including:
-
-- GitHub repositories (issues, pull requests, discussions)
-- Project chat channels
-- Public spaces where the project is represented
-
-It also applies when an individual is officially representing the project in public
-spaces.
 
 ---
 
@@ -46,24 +33,8 @@ Maintainers have the right and responsibility to remove, edit, or reject comment
 commits, code, wiki edits, issues, and other contributions that are not aligned to
 this Code of Conduct.
 
-Any unacceptable behaviour should be reported to the maintainers.
-
-Instances of abusive, harassing, or otherwise unacceptable behaviour may be reported
-to the project maintainers.
-
-All complaints will be reviewed and investigated promptly and fairly.
-
-The maintainers are obligated to respect the privacy and security of the reporter
-of any incident.
-
-Maintainers may take any action they deem appropriate, including but not limited to:
-
-1. **Correction** – A private or public clarification of expected behavior.
-2. **Warning** – A formal warning for continued or serious violations.
-3. **Temporary Ban** – Temporary removal from participation.
-4. **Permanent Ban** – Permanent removal from the project community.
-
-
+Any unacceptable behaviour should be reported to the maintainers; the privacy and security of the reporter
+will be upheld. Maintainers may take any action they deem appropriate.
 
 ---
 
