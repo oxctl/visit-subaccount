@@ -31,7 +31,7 @@ If applicable, add screenshots to help explain your problem.
  - Device: [e.g. iPhone6]
  - OS: [e.g. iOS8.1]
  - Browser  & version [e.g. stock browser, Safari v89.17, Chrome v123.456]
- - Canvas App & version [Staff v75, Student v23.15]
+ - Canvas App & version [e.g. Staff v75, Student v23.15]
 
 **Additional context**
 Add any other context about the problem here.
