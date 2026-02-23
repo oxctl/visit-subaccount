@@ -8,7 +8,7 @@ TLS is enabled by the mkcert vite plugin which can be disabled through `vite.con
 
 ## Hosting
 
-The tool does not have a back-end, it is a JavaScript Vite application. The easiest way to host is to use Cloudflare Pages & link to  Github repository on the Cloudflare Pages 'Settings' pages. The following build options also need setting
+The tool does not have a back-end, it is a JavaScript Vite application. One easy way to host is to use Cloudflare Pages & link to  Github repository on the Cloudflare Pages 'Settings' pages. The following build options also need setting
 
  - Build command: `npm run build`
  - Build output: `build`
