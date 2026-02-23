@@ -36,11 +36,11 @@ function App() {
     const decodedJwt = jwtDecode(receivedToken);
     const jwtClaim = decodedJwt["https://purl.imsglobal.org/spec/lti/claim/custom"];
 
-  // Ensure there's no trailing slash on the Canvas base URL before concatenating
-  const baseCanvasUrl = (jwtClaim.canvas_base_url || "").replace(/\/+$/g, "");
+    // Ensure there's no trailing slash on the Canvas base URL before concatenating
+    const baseCanvasUrl = (jwtClaim.canvas_base_url || "").replace(/\/+$/g, "");
 
-  // this is the parent sub-account
-  const url = baseCanvasUrl + "/accounts/" + jwtClaim.canvas_account_id;
+    // this is the parent sub-account
+    const url = baseCanvasUrl + "/accounts/" + jwtClaim.canvas_account_id;
     setAccountUrl(url);
   };
 
