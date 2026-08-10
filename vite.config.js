@@ -2,6 +2,10 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import mkcert from "vite-plugin-mkcert";
 
+
+import { configDefaults } from "vitest/config";
+
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -18,5 +22,10 @@ export default defineConfig({
     proxy: {
       "/api": "https://oxeval.instructure.com",
     },
+  },
+  test: {
+    globals: true,
+    environment: "jsdom",
+    exclude: [...configDefaults.exclude, "deployment/*"],
   },
 });
