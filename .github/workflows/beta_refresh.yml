@@ -7,7 +7,7 @@ on:
 
 jobs:
   update-config:
-uses: ./.github/workflows/update-config.yml
+    uses: ./.github/workflows/update-config.yml
     with:
       env_type: beta
     secrets: inherit
